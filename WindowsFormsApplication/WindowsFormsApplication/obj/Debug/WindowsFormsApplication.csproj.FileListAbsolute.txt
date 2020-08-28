@@ -18,3 +18,4 @@ C:\Users\T-Gamer\source\repos\WindowsFormsApplication\WindowsFormsApplication\ob
 C:\Users\T-Gamer\source\repos\WindowsFormsApplication\WindowsFormsApplication\obj\Debug\WindowsFormsApplication.FrmImportador.resources
 C:\Users\T-Gamer\source\repos\WindowsFormsApplication\WindowsFormsApplication\obj\Debug\WindowsFormsApplication.FrmPanel.resources
 C:\Users\T-Gamer\source\repos\WindowsFormsApplication\WindowsFormsApplication\obj\Debug\WindowsFormsApplication.FrmTabControl.resources
+C:\Users\T-Gamer\source\repos\WindowsFormsApplication\WindowsFormsApplication\obj\Debug\WindowsFormsApplication.FrmTree.resources
