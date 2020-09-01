@@ -1,0 +1,6 @@
+C:\Users\T-Gamer\source\repos\C-Sharp\TresCamadas\Database\bin\Debug\Database.dll
+C:\Users\T-Gamer\source\repos\C-Sharp\TresCamadas\Database\bin\Debug\Database.pdb
+C:\Users\T-Gamer\source\repos\C-Sharp\TresCamadas\Database\obj\Debug\DatabaseTXT.csprojAssemblyReference.cache
+C:\Users\T-Gamer\source\repos\C-Sharp\TresCamadas\Database\obj\Debug\DatabaseTXT.csproj.CoreCompileInputs.cache
+C:\Users\T-Gamer\source\repos\C-Sharp\TresCamadas\Database\obj\Debug\Database.dll
+C:\Users\T-Gamer\source\repos\C-Sharp\TresCamadas\Database\obj\Debug\Database.pdb

@@ -1,0 +1,6 @@
+C:\Users\T-Gamer\source\repos\C-Sharp\TresCamadas\DatabaseSQL\bin\Debug\DatabaseSQL.dll
+C:\Users\T-Gamer\source\repos\C-Sharp\TresCamadas\DatabaseSQL\bin\Debug\DatabaseSQL.pdb
+C:\Users\T-Gamer\source\repos\C-Sharp\TresCamadas\DatabaseSQL\obj\Debug\DatabaseSQL.csprojAssemblyReference.cache
+C:\Users\T-Gamer\source\repos\C-Sharp\TresCamadas\DatabaseSQL\obj\Debug\DatabaseSQL.csproj.CoreCompileInputs.cache
+C:\Users\T-Gamer\source\repos\C-Sharp\TresCamadas\DatabaseSQL\obj\Debug\DatabaseSQL.dll
+C:\Users\T-Gamer\source\repos\C-Sharp\TresCamadas\DatabaseSQL\obj\Debug\DatabaseSQL.pdb

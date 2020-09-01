@@ -7,3 +7,5 @@ C:\Users\T-Gamer\source\repos\C-Sharp\TresCamadas\Business\obj\Debug\Business.pd
 C:\Users\T-Gamer\source\repos\C-Sharp\TresCamadas\Business\bin\Debug\Database.dll
 C:\Users\T-Gamer\source\repos\C-Sharp\TresCamadas\Business\bin\Debug\Database.pdb
 C:\Users\T-Gamer\source\repos\C-Sharp\TresCamadas\Business\obj\Debug\Business.csproj.CopyComplete
+C:\Users\T-Gamer\source\repos\C-Sharp\TresCamadas\Business\bin\Debug\DatabaseSQL.dll
+C:\Users\T-Gamer\source\repos\C-Sharp\TresCamadas\Business\bin\Debug\DatabaseSQL.pdb
