@@ -1,0 +1,16 @@
+C:\Users\T-Gamer\source\repos\C-Sharp\ObjectRelationalMapping\UI\obj\Debug\UI.csprojAssemblyReference.cache
+C:\Users\T-Gamer\source\repos\C-Sharp\ObjectRelationalMapping\UI\obj\Debug\UI.Form1.resources
+C:\Users\T-Gamer\source\repos\C-Sharp\ObjectRelationalMapping\UI\obj\Debug\UI.Properties.Resources.resources
+C:\Users\T-Gamer\source\repos\C-Sharp\ObjectRelationalMapping\UI\obj\Debug\UI.csproj.GenerateResource.cache
+C:\Users\T-Gamer\source\repos\C-Sharp\ObjectRelationalMapping\UI\obj\Debug\UI.csproj.CoreCompileInputs.cache
+C:\Users\T-Gamer\source\repos\C-Sharp\ObjectRelationalMapping\UI\bin\Debug\UI.exe.config
+C:\Users\T-Gamer\source\repos\C-Sharp\ObjectRelationalMapping\UI\bin\Debug\UI.exe
+C:\Users\T-Gamer\source\repos\C-Sharp\ObjectRelationalMapping\UI\bin\Debug\UI.pdb
+C:\Users\T-Gamer\source\repos\C-Sharp\ObjectRelationalMapping\UI\bin\Debug\Business.dll
+C:\Users\T-Gamer\source\repos\C-Sharp\ObjectRelationalMapping\UI\bin\Debug\DataBase.dll
+C:\Users\T-Gamer\source\repos\C-Sharp\ObjectRelationalMapping\UI\bin\Debug\Business.pdb
+C:\Users\T-Gamer\source\repos\C-Sharp\ObjectRelationalMapping\UI\bin\Debug\DataBase.pdb
+C:\Users\T-Gamer\source\repos\C-Sharp\ObjectRelationalMapping\UI\obj\Debug\UI.csproj.CopyComplete
+C:\Users\T-Gamer\source\repos\C-Sharp\ObjectRelationalMapping\UI\obj\Debug\UI.exe
+C:\Users\T-Gamer\source\repos\C-Sharp\ObjectRelationalMapping\UI\obj\Debug\UI.pdb
+C:\Users\T-Gamer\source\repos\C-Sharp\ObjectRelationalMapping\UI\bin\Debug\DataBase.dll.config

@@ -1,0 +1,10 @@
+C:\Users\T-Gamer\source\repos\C-Sharp\ObjectRelationalMapping\Business\obj\Debug\Business.csprojAssemblyReference.cache
+C:\Users\T-Gamer\source\repos\C-Sharp\ObjectRelationalMapping\Business\obj\Debug\Business.csproj.CoreCompileInputs.cache
+C:\Users\T-Gamer\source\repos\C-Sharp\ObjectRelationalMapping\Business\bin\Debug\Business.dll
+C:\Users\T-Gamer\source\repos\C-Sharp\ObjectRelationalMapping\Business\bin\Debug\Business.pdb
+C:\Users\T-Gamer\source\repos\C-Sharp\ObjectRelationalMapping\Business\bin\Debug\DataBase.dll
+C:\Users\T-Gamer\source\repos\C-Sharp\ObjectRelationalMapping\Business\bin\Debug\DataBase.pdb
+C:\Users\T-Gamer\source\repos\C-Sharp\ObjectRelationalMapping\Business\obj\Debug\Business.csproj.CopyComplete
+C:\Users\T-Gamer\source\repos\C-Sharp\ObjectRelationalMapping\Business\obj\Debug\Business.dll
+C:\Users\T-Gamer\source\repos\C-Sharp\ObjectRelationalMapping\Business\obj\Debug\Business.pdb
+C:\Users\T-Gamer\source\repos\C-Sharp\ObjectRelationalMapping\Business\bin\Debug\DataBase.dll.config
