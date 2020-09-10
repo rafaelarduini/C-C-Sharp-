@@ -8,21 +8,22 @@ using Database;
 
 namespace Business
 {
-    public class Endereco : Base
+    public class Carro : Base
     {
-        [OpcoesBase(UsarNoBancoDeDados = true)]
-        public string Logradouro { get; set; }
-
-        [OpcoesBase(UsarNoBancoDeDados = true)]
-        public string Numero { get; set; }
-
-        [OpcoesBase(UsarNoBancoDeDados = true)]
-        public string Cidade { get; set; }
-
-        [OpcoesBase(UsarNoBancoDeDados = true)]
-        public string Estado { get; set; }
-
         [OpcoesBase(UsarNoBancoDeDados = true, UsarParaBuscar = true, ChavePrimaria = true)]
-        public string CPF { get; set; }
+        public int ID { get; set; }
+
+        [OpcoesBase(UsarNoBancoDeDados = true)]
+        public string Nome { get; set; }
+
+        [OpcoesBase(UsarNoBancoDeDados = true)]
+        public string Marca { get; set; }
+
+        [OpcoesBase(UsarNoBancoDeDados = true)]
+        public int Quantidade { get; set; }
+
+        [OpcoesBase(UsarNoBancoDeDados = true)]
+        public double Valor { get; set; }
+
     }
 }

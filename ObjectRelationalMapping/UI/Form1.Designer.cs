@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabs = new System.Windows.Forms.TabControl();
+            this.Usuario = new System.Windows.Forms.TabPage();
             this.btnGravar = new System.Windows.Forms.Button();
             this.txtCPF = new System.Windows.Forms.MaskedTextBox();
             this.txtTelefone = new System.Windows.Forms.MaskedTextBox();
@@ -37,7 +37,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.Endereco = new System.Windows.Forms.TabPage();
             this.txtNumero = new System.Windows.Forms.TextBox();
             this.numero = new System.Windows.Forms.Label();
             this.txtCidade = new System.Windows.Forms.TextBox();
@@ -49,7 +49,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.btnEndereco = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.Resultado = new System.Windows.Forms.TabPage();
             this.gridEnderecos = new System.Windows.Forms.DataGridView();
             this.lblCPF = new System.Windows.Forms.Label();
             this.lblTelefone = new System.Windows.Forms.Label();
@@ -57,40 +57,50 @@
             this.btnBuscar = new System.Windows.Forms.Button();
             this.cboComboBusca = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
-            this.tabPage3.SuspendLayout();
+            this.dgUsuarios = new System.Windows.Forms.DataGridView();
+            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Telefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CPF = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtId = new System.Windows.Forms.TextBox();
+            this.btnExcluir = new System.Windows.Forms.Button();
+            this.tabs.SuspendLayout();
+            this.Usuario.SuspendLayout();
+            this.Endereco.SuspendLayout();
+            this.Resultado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridEnderecos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgUsuarios)).BeginInit();
             this.SuspendLayout();
             // 
-            // tabControl1
+            // tabs
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Location = new System.Drawing.Point(12, 12);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(587, 494);
-            this.tabControl1.TabIndex = 7;
+            this.tabs.Controls.Add(this.Usuario);
+            this.tabs.Controls.Add(this.Endereco);
+            this.tabs.Controls.Add(this.Resultado);
+            this.tabs.Location = new System.Drawing.Point(12, 12);
+            this.tabs.Name = "tabs";
+            this.tabs.SelectedIndex = 0;
+            this.tabs.Size = new System.Drawing.Size(587, 695);
+            this.tabs.TabIndex = 7;
             // 
-            // tabPage1
+            // Usuario
             // 
-            this.tabPage1.Controls.Add(this.btnGravar);
-            this.tabPage1.Controls.Add(this.txtCPF);
-            this.tabPage1.Controls.Add(this.txtTelefone);
-            this.tabPage1.Controls.Add(this.txtNome);
-            this.tabPage1.Controls.Add(this.label3);
-            this.tabPage1.Controls.Add(this.label2);
-            this.tabPage1.Controls.Add(this.label1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(579, 468);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Usuario";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.Usuario.Controls.Add(this.btnExcluir);
+            this.Usuario.Controls.Add(this.txtId);
+            this.Usuario.Controls.Add(this.dgUsuarios);
+            this.Usuario.Controls.Add(this.btnGravar);
+            this.Usuario.Controls.Add(this.txtCPF);
+            this.Usuario.Controls.Add(this.txtTelefone);
+            this.Usuario.Controls.Add(this.txtNome);
+            this.Usuario.Controls.Add(this.label3);
+            this.Usuario.Controls.Add(this.label2);
+            this.Usuario.Controls.Add(this.label1);
+            this.Usuario.Location = new System.Drawing.Point(4, 22);
+            this.Usuario.Name = "Usuario";
+            this.Usuario.Padding = new System.Windows.Forms.Padding(3);
+            this.Usuario.Size = new System.Drawing.Size(579, 669);
+            this.Usuario.TabIndex = 0;
+            this.Usuario.Text = "Usuario";
+            this.Usuario.UseVisualStyleBackColor = true;
             // 
             // btnGravar
             // 
@@ -159,26 +169,26 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "Nome:";
             // 
-            // tabPage2
+            // Endereco
             // 
-            this.tabPage2.Controls.Add(this.txtNumero);
-            this.tabPage2.Controls.Add(this.numero);
-            this.tabPage2.Controls.Add(this.txtCidade);
-            this.tabPage2.Controls.Add(this.label7);
-            this.tabPage2.Controls.Add(this.txtEstado);
-            this.tabPage2.Controls.Add(this.label5);
-            this.tabPage2.Controls.Add(this.cboUsuario);
-            this.tabPage2.Controls.Add(this.txtLogradouro);
-            this.tabPage2.Controls.Add(this.label4);
-            this.tabPage2.Controls.Add(this.btnEndereco);
-            this.tabPage2.Controls.Add(this.label6);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(579, 468);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Endereco";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.Endereco.Controls.Add(this.txtNumero);
+            this.Endereco.Controls.Add(this.numero);
+            this.Endereco.Controls.Add(this.txtCidade);
+            this.Endereco.Controls.Add(this.label7);
+            this.Endereco.Controls.Add(this.txtEstado);
+            this.Endereco.Controls.Add(this.label5);
+            this.Endereco.Controls.Add(this.cboUsuario);
+            this.Endereco.Controls.Add(this.txtLogradouro);
+            this.Endereco.Controls.Add(this.label4);
+            this.Endereco.Controls.Add(this.btnEndereco);
+            this.Endereco.Controls.Add(this.label6);
+            this.Endereco.Location = new System.Drawing.Point(4, 22);
+            this.Endereco.Name = "Endereco";
+            this.Endereco.Padding = new System.Windows.Forms.Padding(3);
+            this.Endereco.Size = new System.Drawing.Size(579, 468);
+            this.Endereco.TabIndex = 1;
+            this.Endereco.Text = "Endereco";
+            this.Endereco.UseVisualStyleBackColor = true;
             // 
             // txtNumero
             // 
@@ -282,22 +292,22 @@
             this.label6.TabIndex = 13;
             this.label6.Text = "Usuario:";
             // 
-            // tabPage3
+            // Resultado
             // 
-            this.tabPage3.Controls.Add(this.gridEnderecos);
-            this.tabPage3.Controls.Add(this.lblCPF);
-            this.tabPage3.Controls.Add(this.lblTelefone);
-            this.tabPage3.Controls.Add(this.lblNome);
-            this.tabPage3.Controls.Add(this.btnBuscar);
-            this.tabPage3.Controls.Add(this.cboComboBusca);
-            this.tabPage3.Controls.Add(this.label8);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(579, 468);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Resultado";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            this.Resultado.Controls.Add(this.gridEnderecos);
+            this.Resultado.Controls.Add(this.lblCPF);
+            this.Resultado.Controls.Add(this.lblTelefone);
+            this.Resultado.Controls.Add(this.lblNome);
+            this.Resultado.Controls.Add(this.btnBuscar);
+            this.Resultado.Controls.Add(this.cboComboBusca);
+            this.Resultado.Controls.Add(this.label8);
+            this.Resultado.Location = new System.Drawing.Point(4, 22);
+            this.Resultado.Name = "Resultado";
+            this.Resultado.Padding = new System.Windows.Forms.Padding(3);
+            this.Resultado.Size = new System.Drawing.Size(579, 468);
+            this.Resultado.TabIndex = 2;
+            this.Resultado.Text = "Resultado";
+            this.Resultado.UseVisualStyleBackColor = true;
             // 
             // gridEnderecos
             // 
@@ -367,31 +377,81 @@
             this.label8.TabIndex = 23;
             this.label8.Text = "Usuario:";
             // 
+            // dgUsuarios
+            // 
+            this.dgUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Nome,
+            this.Telefone,
+            this.CPF});
+            this.dgUsuarios.Location = new System.Drawing.Point(15, 300);
+            this.dgUsuarios.Name = "dgUsuarios";
+            this.dgUsuarios.Size = new System.Drawing.Size(558, 314);
+            this.dgUsuarios.TabIndex = 13;
+            this.dgUsuarios.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgUsuarios_CellDoubleClick);
+            // 
+            // Nome
+            // 
+            this.Nome.DataPropertyName = "Nome";
+            this.Nome.HeaderText = "Nome";
+            this.Nome.Name = "Nome";
+            // 
+            // Telefone
+            // 
+            this.Telefone.DataPropertyName = "Telefone";
+            this.Telefone.HeaderText = "Telefone";
+            this.Telefone.Name = "Telefone";
+            // 
+            // CPF
+            // 
+            this.CPF.DataPropertyName = "CPF";
+            this.CPF.HeaderText = "CPF do Usuario";
+            this.CPF.Name = "CPF";
+            // 
+            // txtId
+            // 
+            this.txtId.Location = new System.Drawing.Point(445, 244);
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(44, 20);
+            this.txtId.TabIndex = 14;
+            this.txtId.Visible = false;
+            // 
+            // btnExcluir
+            // 
+            this.btnExcluir.Location = new System.Drawing.Point(465, 620);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(86, 43);
+            this.btnExcluir.TabIndex = 15;
+            this.btnExcluir.Text = "Excluir";
+            this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(611, 518);
-            this.Controls.Add(this.tabControl1);
+            this.ClientSize = new System.Drawing.Size(604, 719);
+            this.Controls.Add(this.tabs);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
-            this.tabPage3.ResumeLayout(false);
-            this.tabPage3.PerformLayout();
+            this.tabs.ResumeLayout(false);
+            this.Usuario.ResumeLayout(false);
+            this.Usuario.PerformLayout();
+            this.Endereco.ResumeLayout(false);
+            this.Endereco.PerformLayout();
+            this.Resultado.ResumeLayout(false);
+            this.Resultado.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridEnderecos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgUsuarios)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabControl tabs;
+        private System.Windows.Forms.TabPage Usuario;
         private System.Windows.Forms.Button btnGravar;
         private System.Windows.Forms.MaskedTextBox txtCPF;
         private System.Windows.Forms.MaskedTextBox txtTelefone;
@@ -399,7 +459,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage Endereco;
         private System.Windows.Forms.TextBox txtNumero;
         private System.Windows.Forms.Label numero;
         private System.Windows.Forms.TextBox txtCidade;
@@ -411,7 +471,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnEndereco;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.TabPage Resultado;
         private System.Windows.Forms.ComboBox cboComboBusca;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnBuscar;
@@ -419,5 +479,11 @@
         private System.Windows.Forms.Label lblTelefone;
         private System.Windows.Forms.Label lblNome;
         private System.Windows.Forms.DataGridView gridEnderecos;
+        private System.Windows.Forms.DataGridView dgUsuarios;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Telefone;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CPF;
+        private System.Windows.Forms.TextBox txtId;
+        private System.Windows.Forms.Button btnExcluir;
     }
 }

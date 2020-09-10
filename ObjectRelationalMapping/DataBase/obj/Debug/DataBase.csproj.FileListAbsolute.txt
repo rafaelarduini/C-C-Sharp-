@@ -1,7 +1,7 @@
-C:\Users\T-Gamer\source\repos\C-Sharp\ObjectRelationalMapping\DataBase\obj\Debug\DataBase.csprojAssemblyReference.cache
 C:\Users\T-Gamer\source\repos\C-Sharp\ObjectRelationalMapping\DataBase\obj\Debug\DataBase.csproj.CoreCompileInputs.cache
 C:\Users\T-Gamer\source\repos\C-Sharp\ObjectRelationalMapping\DataBase\bin\Debug\DataBase.dll
 C:\Users\T-Gamer\source\repos\C-Sharp\ObjectRelationalMapping\DataBase\bin\Debug\DataBase.pdb
 C:\Users\T-Gamer\source\repos\C-Sharp\ObjectRelationalMapping\DataBase\obj\Debug\DataBase.dll
 C:\Users\T-Gamer\source\repos\C-Sharp\ObjectRelationalMapping\DataBase\obj\Debug\DataBase.pdb
 C:\Users\T-Gamer\source\repos\C-Sharp\ObjectRelationalMapping\DataBase\bin\Debug\DataBase.dll.config
+C:\Users\T-Gamer\source\repos\C-Sharp\ObjectRelationalMapping\DataBase\obj\Debug\Database.csprojAssemblyReference.cache

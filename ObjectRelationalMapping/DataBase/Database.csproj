@@ -43,7 +43,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Base.cs" />
-    <Compile Include="Endereco.cs" />
     <Compile Include="IBase.cs" />
     <Compile Include="OpcoesBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -52,7 +51,6 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="Usuario.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

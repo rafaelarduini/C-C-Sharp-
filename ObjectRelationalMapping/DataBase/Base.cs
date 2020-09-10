@@ -15,6 +15,84 @@ namespace Database
     {
         private string connectionString = Settings.Default.stringConexao;
 
+        public int Key
+        {
+            get
+            {
+                foreach (PropertyInfo pi in this.GetType().GetProperties(BindingFlags.Public | BindingFlags.Instance))
+                {
+                    OpcoesBase pOpcoesBase = (OpcoesBase)pi.GetCustomAttribute(typeof(OpcoesBase));
+                    if (pOpcoesBase != null && pOpcoesBase.ChavePrimaria)
+                    {
+                        return Convert.ToInt32(pi.GetValue(this));
+                    }
+                }
+                return 0;
+            }
+        }
+
+        private string tipoPropriedade(PropertyInfo pi)
+        {
+            switch (pi.PropertyType.Name)
+            {
+                case "Int32":
+                    return "int";
+                case "Int64":
+                    return "bigint";
+                case "Double":
+                    return "decimal(9, 2)";
+                case "Single":
+                    return "float";
+                case "DateTime":
+                    return "datetime";
+                case "Boolean":
+                    return "tinyint";
+                default:
+                    return "varchar(255)";
+            }
+        }
+
+        public virtual void CriarTabela()
+        {
+            using (SqlConnection connection = new SqlConnection(
+                         connectionString))
+            {
+                string chavePrimaria = "";
+                List<string> campos = new List<string>();
+
+                foreach (PropertyInfo pi in this.GetType().GetProperties(BindingFlags.Public | BindingFlags.Instance))
+                {
+                    OpcoesBase pOpcoesBase = (OpcoesBase)pi.GetCustomAttribute(typeof(OpcoesBase));
+                    if (pOpcoesBase != null && pOpcoesBase.UsarNoBancoDeDados && !pOpcoesBase.AutoIncrementar)
+                    {
+                        if (pOpcoesBase.ChavePrimaria)
+                        {
+                            chavePrimaria = pi.Name + " int identity, ";
+                        }
+                        else
+                        {
+                            campos.Add(pi.Name + " " + tipoPropriedade(pi) + " ");
+                        }
+                    }
+                }
+
+                string tabelaExiste = "IF EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'[dbo].[" + this.GetType().Name + "s]') AND OBJECTPROPERTY(id, N'IsUserTable') = 1)" +
+                                    "DROP TABLE " + this.GetType().Name + "s";
+                SqlCommand command = new SqlCommand(tabelaExiste, connection);
+                command.Connection.Open();
+                command.ExecuteNonQuery();
+
+                string queryString = "CREATE TABLE " + this.GetType().Name + "s (";
+                queryString += chavePrimaria;
+                queryString += string.Join(",", campos.ToArray());
+                queryString += "); ";
+
+                command = new SqlCommand(queryString, connection);
+                command.ExecuteNonQuery();
+            }
+        }
+
+
         public virtual void Salvar()
         {
             using (SqlConnection connection = new SqlConnection(
@@ -23,17 +101,59 @@ namespace Database
                 List<string> campos = new List<string>();
                 List<string> valores = new List<string>();
 
-                foreach (PropertyInfo pi in this.GetType().GetProperties(BindingFlags.Public))
+                foreach (PropertyInfo pi in this.GetType().GetProperties(BindingFlags.Public | BindingFlags.Instance))
                 {
                     OpcoesBase pOpcoesBase = (OpcoesBase)pi.GetCustomAttribute(typeof(OpcoesBase));
-                    if (pOpcoesBase != null && pOpcoesBase.UsarNoBancoDeDados)
+                    if (pOpcoesBase != null && pOpcoesBase.UsarNoBancoDeDados && !pOpcoesBase.AutoIncrementar)
                     {
-                        campos.Add(pi.Name);
-                        valores.Add("'" + pi.GetValue(this) + "'");
+                        if (this.Key == 0)
+                        {
+                            if (!pOpcoesBase.ChavePrimaria)
+                            {
+                                campos.Add(pi.Name);
+
+                                if (pi.PropertyType.Name == "Double")
+                                {
+                                    valores.Add("'" + pi.GetValue(this).ToString().Replace(".", "").Replace(",", ".") + "'");
+                                }
+                                else
+                                {
+                                    valores.Add("'" + pi.GetValue(this) + "'");
+                                }
+                            }
+                        }
+                        else
+                        {
+                            if (!pOpcoesBase.ChavePrimaria)
+                            {
+                                valores.Add(" " + pi.Name + " = '" + pi.GetValue(this) + "'");
+                            }
+                        }
                     }
                 }
 
-                string queryString = "insert into " + this.GetType().Name + "s (" + string.Join(", ", campos.ToArray()) + ")values(" + string.Join(", ", valores.ToArray()) + ");";
+                string queryString = string.Empty;
+
+                if (this.Key == 0)
+                {
+                    queryString = "insert into " + this.GetType().Name + "s (" + string.Join(", ", campos.ToArray()) + ")values(" + string.Join(", ", valores.ToArray()) + ");";
+                }
+                else
+                {
+                    queryString = "update " + this.GetType().Name + "s  set " + string.Join(", ", valores.ToArray()) + " where id = " + this.Key + ";";
+                }
+                SqlCommand command = new SqlCommand(queryString, connection);
+                command.Connection.Open();
+                command.ExecuteNonQuery();
+            }
+        }
+
+        public virtual void Excluir()
+        {
+            using (SqlConnection connection = new SqlConnection(
+              connectionString))
+            {
+                string queryString = "delete from " + this.GetType().Name + "s where id = " + this.Key + "; ";
                 SqlCommand command = new SqlCommand(queryString, connection);
                 command.Connection.Open();
                 command.ExecuteNonQuery();
@@ -69,7 +189,7 @@ namespace Database
             {
                 List<string> where = new List<string>();
                 string chavePrimaria = string.Empty;
-                foreach (PropertyInfo pi in this.GetType().GetProperties(BindingFlags.Public))
+                foreach (PropertyInfo pi in this.GetType().GetProperties(BindingFlags.Public | BindingFlags.Instance))
                 {
                     OpcoesBase pOpcoesBase = (OpcoesBase)pi.GetCustomAttribute(typeof(OpcoesBase));
                     if (pOpcoesBase != null)
@@ -79,7 +199,7 @@ namespace Database
                             chavePrimaria = pi.Name;
                         }
 
-                        if (pOpcoesBase.UsarNoBancoDeDados)
+                        if (pOpcoesBase.UsarParaBuscar)
                         {
                             var valor = pi.GetValue(this);
                             if (valor != null)
@@ -112,12 +232,12 @@ namespace Database
 
         private void setProperty(ref IBase obj, SqlDataReader reader)
         {
-            foreach (PropertyInfo pi in obj.GetType().GetProperties(BindingFlags.Public))
+            foreach (PropertyInfo pi in obj.GetType().GetProperties(BindingFlags.Public | BindingFlags.Instance))
             {
                 OpcoesBase pOpcoesBase = (OpcoesBase)pi.GetCustomAttribute(typeof(OpcoesBase));
                 if (pOpcoesBase != null && pOpcoesBase.UsarNoBancoDeDados)
                 {
-                    pi.SetValue(obj, reader[pi.Name].ToString());
+                    pi.SetValue(obj, reader[pi.Name]);
                 }
             }
         }

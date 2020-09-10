@@ -4,19 +4,34 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data;
+using Database;
 
 namespace Business
 {
-    public class Usuario
+    public class Usuario : Base
     {
+        [OpcoesBase(UsarNoBancoDeDados = true, ChavePrimaria = true, UsarParaBuscar = true)]
+        public int Id { get; set; }
+
+        [OpcoesBase(UsarNoBancoDeDados = true)]
         public string Nome { get; set; }
+
+        [OpcoesBase(UsarNoBancoDeDados = true)]
         public string Telefone { get; set; }
+
+        [OpcoesBase(UsarNoBancoDeDados = true, UsarParaBuscar = true)]
         public string CPF { get; set; }
+
         public List<Endereco> Enderecos
         {
             get
             {
-                return Endereco.PorCPF(this.CPF);
+                List<Endereco> enderecos = new List<Endereco>();
+                foreach (Database.IBase iBase in new Endereco() { CPF = this.CPF }.Busca())
+                {
+                    enderecos.Add((Endereco)iBase);
+                }
+                return enderecos;
             }
         }
 
@@ -25,28 +40,15 @@ namespace Business
             return this.Nome;
         }
 
-        public void Gravar()
+        public new List<Usuario> Todos()
         {
-            new Database.Usuario().Gravar(this.Nome, this.Telefone, this.CPF);
-        }
-
-        public static List<Usuario> Todos()
-        {
-            var list = new List<Usuario>();
-            var tabela = new Database.Usuario().Todos();
-            if (tabela.Rows.Count > 0)
+            var usuarios = new List<Usuario>();
+            foreach (var ibase in base.Todos())
             {
-                foreach (DataRow row in tabela.Rows)
-                {
-                    list.Add(new Usuario()
-                    {
-                        CPF = row["cpf"].ToString(),
-                        Telefone = row["telefone"].ToString(),
-                        Nome = row["nome"].ToString()
-                    });
-                }
+                usuarios.Add((Usuario)ibase);
             }
-            return list;
+
+            return usuarios;
         }
     }
 }
