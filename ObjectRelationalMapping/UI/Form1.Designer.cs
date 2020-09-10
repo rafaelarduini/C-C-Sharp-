@@ -30,6 +30,12 @@
         {
             this.tabs = new System.Windows.Forms.TabControl();
             this.Usuario = new System.Windows.Forms.TabPage();
+            this.btnExcluir = new System.Windows.Forms.Button();
+            this.txtId = new System.Windows.Forms.TextBox();
+            this.dgUsuarios = new System.Windows.Forms.DataGridView();
+            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Telefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CPF = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnGravar = new System.Windows.Forms.Button();
             this.txtCPF = new System.Windows.Forms.MaskedTextBox();
             this.txtTelefone = new System.Windows.Forms.MaskedTextBox();
@@ -57,18 +63,12 @@
             this.btnBuscar = new System.Windows.Forms.Button();
             this.cboComboBusca = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.dgUsuarios = new System.Windows.Forms.DataGridView();
-            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Telefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CPF = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtId = new System.Windows.Forms.TextBox();
-            this.btnExcluir = new System.Windows.Forms.Button();
             this.tabs.SuspendLayout();
             this.Usuario.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgUsuarios)).BeginInit();
             this.Endereco.SuspendLayout();
             this.Resultado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridEnderecos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgUsuarios)).BeginInit();
             this.SuspendLayout();
             // 
             // tabs
@@ -102,6 +102,55 @@
             this.Usuario.Text = "Usuario";
             this.Usuario.UseVisualStyleBackColor = true;
             // 
+            // btnExcluir
+            // 
+            this.btnExcluir.Location = new System.Drawing.Point(465, 620);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(86, 43);
+            this.btnExcluir.TabIndex = 15;
+            this.btnExcluir.Text = "Excluir";
+            this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
+            // 
+            // txtId
+            // 
+            this.txtId.Location = new System.Drawing.Point(445, 244);
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(44, 20);
+            this.txtId.TabIndex = 14;
+            this.txtId.Visible = false;
+            // 
+            // dgUsuarios
+            // 
+            this.dgUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Nome,
+            this.Telefone,
+            this.CPF});
+            this.dgUsuarios.Location = new System.Drawing.Point(15, 300);
+            this.dgUsuarios.Name = "dgUsuarios";
+            this.dgUsuarios.Size = new System.Drawing.Size(558, 314);
+            this.dgUsuarios.TabIndex = 13;
+            this.dgUsuarios.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgUsuarios_CellDoubleClick);
+            // 
+            // Nome
+            // 
+            this.Nome.DataPropertyName = "Nome";
+            this.Nome.HeaderText = "Nome";
+            this.Nome.Name = "Nome";
+            // 
+            // Telefone
+            // 
+            this.Telefone.DataPropertyName = "Telefone";
+            this.Telefone.HeaderText = "Telefone";
+            this.Telefone.Name = "Telefone";
+            // 
+            // CPF
+            // 
+            this.CPF.DataPropertyName = "CPF";
+            this.CPF.HeaderText = "CPF do Usuario";
+            this.CPF.Name = "CPF";
+            // 
             // btnGravar
             // 
             this.btnGravar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -126,7 +175,7 @@
             // 
             this.txtTelefone.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTelefone.Location = new System.Drawing.Point(133, 92);
-            this.txtTelefone.Mask = "(99) 0000-0000";
+            this.txtTelefone.Mask = "(99) 00000-0000";
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.Size = new System.Drawing.Size(154, 29);
             this.txtTelefone.TabIndex = 10;
@@ -185,7 +234,7 @@
             this.Endereco.Location = new System.Drawing.Point(4, 22);
             this.Endereco.Name = "Endereco";
             this.Endereco.Padding = new System.Windows.Forms.Padding(3);
-            this.Endereco.Size = new System.Drawing.Size(579, 468);
+            this.Endereco.Size = new System.Drawing.Size(579, 669);
             this.Endereco.TabIndex = 1;
             this.Endereco.Text = "Endereco";
             this.Endereco.UseVisualStyleBackColor = true;
@@ -304,7 +353,7 @@
             this.Resultado.Location = new System.Drawing.Point(4, 22);
             this.Resultado.Name = "Resultado";
             this.Resultado.Padding = new System.Windows.Forms.Padding(3);
-            this.Resultado.Size = new System.Drawing.Size(579, 468);
+            this.Resultado.Size = new System.Drawing.Size(579, 669);
             this.Resultado.TabIndex = 2;
             this.Resultado.Text = "Resultado";
             this.Resultado.UseVisualStyleBackColor = true;
@@ -377,55 +426,6 @@
             this.label8.TabIndex = 23;
             this.label8.Text = "Usuario:";
             // 
-            // dgUsuarios
-            // 
-            this.dgUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Nome,
-            this.Telefone,
-            this.CPF});
-            this.dgUsuarios.Location = new System.Drawing.Point(15, 300);
-            this.dgUsuarios.Name = "dgUsuarios";
-            this.dgUsuarios.Size = new System.Drawing.Size(558, 314);
-            this.dgUsuarios.TabIndex = 13;
-            this.dgUsuarios.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgUsuarios_CellDoubleClick);
-            // 
-            // Nome
-            // 
-            this.Nome.DataPropertyName = "Nome";
-            this.Nome.HeaderText = "Nome";
-            this.Nome.Name = "Nome";
-            // 
-            // Telefone
-            // 
-            this.Telefone.DataPropertyName = "Telefone";
-            this.Telefone.HeaderText = "Telefone";
-            this.Telefone.Name = "Telefone";
-            // 
-            // CPF
-            // 
-            this.CPF.DataPropertyName = "CPF";
-            this.CPF.HeaderText = "CPF do Usuario";
-            this.CPF.Name = "CPF";
-            // 
-            // txtId
-            // 
-            this.txtId.Location = new System.Drawing.Point(445, 244);
-            this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(44, 20);
-            this.txtId.TabIndex = 14;
-            this.txtId.Visible = false;
-            // 
-            // btnExcluir
-            // 
-            this.btnExcluir.Location = new System.Drawing.Point(465, 620);
-            this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(86, 43);
-            this.btnExcluir.TabIndex = 15;
-            this.btnExcluir.Text = "Excluir";
-            this.btnExcluir.UseVisualStyleBackColor = true;
-            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -438,12 +438,12 @@
             this.tabs.ResumeLayout(false);
             this.Usuario.ResumeLayout(false);
             this.Usuario.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgUsuarios)).EndInit();
             this.Endereco.ResumeLayout(false);
             this.Endereco.PerformLayout();
             this.Resultado.ResumeLayout(false);
             this.Resultado.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridEnderecos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgUsuarios)).EndInit();
             this.ResumeLayout(false);
 
         }

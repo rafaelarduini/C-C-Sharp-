@@ -20,14 +20,10 @@ namespace UI
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            var carro = new Carro();
-            carro.CriarTabela();
-            var endereco = new Endereco();
-            endereco.CriarTabela();
-            var fornecedor = new Fornecedor();
-            fornecedor.CriarTabela();
-            var usuario = new Usuario();
-            usuario.CriarTabela();
+            //var endereco = new Endereco();
+            //endereco.CriarTabela();
+            //var usuario = new Usuario();
+            //usuario.CriarTabela();
             //carro.Nome = "Fiesta 2";
             //carro.Marca = "Ford";
             //carro.Quantidade = 2;
