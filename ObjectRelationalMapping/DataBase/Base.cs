@@ -188,7 +188,7 @@ namespace Database
                connectionString))
             {
                 List<string> where = new List<string>();
-                string chavePrimaria = string.Empty;
+                string parametroBusca = string.Empty;
                 foreach (PropertyInfo pi in this.GetType().GetProperties(BindingFlags.Public | BindingFlags.Instance))
                 {
                     OpcoesBase pOpcoesBase = (OpcoesBase)pi.GetCustomAttribute(typeof(OpcoesBase));
@@ -196,7 +196,7 @@ namespace Database
                     {
                         if (pOpcoesBase.ChavePrimaria)
                         {
-                            chavePrimaria = pi.Name;
+                            parametroBusca = pi.Name;
                         }
 
                         if (pOpcoesBase.UsarParaBuscar)
@@ -205,13 +205,13 @@ namespace Database
                             if (valor != null)
                             {
                                 where.Add(pi.Name + " = '" + valor + "'");
-                                chavePrimaria = pi.Name;
+                                parametroBusca = pi.Name;
                             }
                         }
                     }
                 }
 
-                string queryString = "select * from " + this.GetType().Name + "s where " + chavePrimaria + " is not null";
+                string queryString = "select * from " + this.GetType().Name + "s where " + parametroBusca + " is not null";
                 if (where.Count > 0)
                 {
                     queryString += " and " + string.Join(" and ", where.ToArray());
