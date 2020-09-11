@@ -205,6 +205,7 @@ namespace Database
                             if (valor != null)
                             {
                                 where.Add(pi.Name + " = '" + valor + "'");
+                                chavePrimaria = pi.Name;
                             }
                         }
                     }

@@ -63,6 +63,10 @@
             this.btnBuscar = new System.Windows.Forms.Button();
             this.cboComboBusca = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.Logradouro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Num = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabs.SuspendLayout();
             this.Usuario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgUsuarios)).BeginInit();
@@ -166,7 +170,7 @@
             // 
             this.txtCPF.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCPF.Location = new System.Drawing.Point(133, 138);
-            this.txtCPF.Mask = "000.000.000.00";
+            this.txtCPF.Mask = "000,000,000-00";
             this.txtCPF.Name = "txtCPF";
             this.txtCPF.Size = new System.Drawing.Size(154, 29);
             this.txtCPF.TabIndex = 11;
@@ -361,6 +365,11 @@
             // gridEnderecos
             // 
             this.gridEnderecos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridEnderecos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Logradouro,
+            this.Num,
+            this.Cidade,
+            this.Estado});
             this.gridEnderecos.Location = new System.Drawing.Point(20, 215);
             this.gridEnderecos.Name = "gridEnderecos";
             this.gridEnderecos.Size = new System.Drawing.Size(544, 236);
@@ -426,6 +435,30 @@
             this.label8.TabIndex = 23;
             this.label8.Text = "Usuario:";
             // 
+            // Logradouro
+            // 
+            this.Logradouro.DataPropertyName = "Logradouro";
+            this.Logradouro.HeaderText = "Logradouro";
+            this.Logradouro.Name = "Logradouro";
+            // 
+            // Num
+            // 
+            this.Num.DataPropertyName = "Numero";
+            this.Num.HeaderText = "Numero";
+            this.Num.Name = "Num";
+            // 
+            // Cidade
+            // 
+            this.Cidade.DataPropertyName = "Cidade";
+            this.Cidade.HeaderText = "Cidade";
+            this.Cidade.Name = "Cidade";
+            // 
+            // Estado
+            // 
+            this.Estado.DataPropertyName = "Estado";
+            this.Estado.HeaderText = "Estado";
+            this.Estado.Name = "Estado";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -485,5 +518,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CPF;
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Button btnExcluir;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Logradouro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Num;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cidade;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
     }
 }

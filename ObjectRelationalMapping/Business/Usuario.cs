@@ -27,7 +27,7 @@ namespace Business
             get
             {
                 List<Endereco> enderecos = new List<Endereco>();
-                foreach (Database.IBase iBase in new Endereco() { CPF = this.CPF }.Busca())
+                foreach (Database.IBase iBase in new Endereco() { Id = this.Id }.Busca())
                 {
                     enderecos.Add((Endereco)iBase);
                 }

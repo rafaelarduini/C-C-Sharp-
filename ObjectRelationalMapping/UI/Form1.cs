@@ -42,7 +42,7 @@ namespace UI
         private void btnEndereco_Click(object sender, EventArgs e)
         {
             var endereco = new Endereco();
-            endereco.CPF = ((Usuario)cboUsuario.SelectedValue).CPF;
+            endereco.Id = ((Usuario)cboUsuario.SelectedValue).Id;
             endereco.Logradouro = txtLogradouro.Text;
             endereco.Numero = txtNumero.Text;
             endereco.Cidade = txtCidade.Text;
@@ -58,6 +58,7 @@ namespace UI
             lblNome.Text = "Nome: " + usuario.Nome;
             lblTelefone.Text = "Teletone: " + usuario.Telefone;
             lblCPF.Text = "CPF: " + usuario.CPF;
+            gridEnderecos.AutoGenerateColumns = false;
             gridEnderecos.DataSource = usuario.Enderecos;
         }
 

@@ -9,7 +9,7 @@ using Database;
 namespace Business
 {
     public class Endereco : Base
-    {
+    {       
         [OpcoesBase(UsarNoBancoDeDados = true)]
         public string Logradouro { get; set; }
 
@@ -22,7 +22,7 @@ namespace Business
         [OpcoesBase(UsarNoBancoDeDados = true)]
         public string Estado { get; set; }
 
-        [OpcoesBase(UsarNoBancoDeDados = true, UsarParaBuscar = true, ChavePrimaria = true)]
-        public string CPF { get; set; }
+        [OpcoesBase(UsarNoBancoDeDados = true, UsarParaBuscar = true)]
+        public int Id { get; set; }
     }
 }
