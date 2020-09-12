@@ -16,8 +16,11 @@ namespace WebApplication
 
         protected void btnOk_Click(object sender, EventArgs e)
         {
-            Response.Write("Olá " + txtMensagem.Text);
-            Response.Write("<script>alert('Olá " + txtMensagem.Text +"')</script>");
+            Response.Write("Olá " + txtMensagem.Text + "<br>");
+            Response.Write("Olá " + Request["txtMensagem"]);
+            Response.Write("Telefone" + Request["telefone"] + telefone.Value);
+
+            //Response.Write("<script>alert('Olá " + txtMensagem.Text +"')</script>");
         }
     }
 }

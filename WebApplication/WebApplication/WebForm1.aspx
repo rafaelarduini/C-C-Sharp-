@@ -12,6 +12,7 @@
         <div>
         </div>
         <asp:TextBox ID="txtMensagem" runat="server"></asp:TextBox>
+        <input type="text" name="telefone" id="telefone" runat="server" />
         <asp:Button ID="btnOk" runat="server" OnClick="btnOk_Click" Text="Mostrar mensagem" />
     </form>
 </body>
