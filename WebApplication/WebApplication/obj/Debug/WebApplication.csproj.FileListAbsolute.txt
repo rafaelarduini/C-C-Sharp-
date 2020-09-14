@@ -52,7 +52,6 @@ C:\Users\T-Gamer\source\repos\C-Sharp\WebApplication\WebApplication\bin\roslyn\V
 C:\Users\T-Gamer\source\repos\C-Sharp\WebApplication\WebApplication\bin\roslyn\VBCSCompiler.exe.config
 C:\Users\T-Gamer\source\repos\C-Sharp\WebApplication\WebApplication\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\T-Gamer\source\repos\C-Sharp\WebApplication\WebApplication\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\T-Gamer\source\repos\C-Sharp\WebApplication\WebApplication\obj\Debug\WebApplication.csprojAssemblyReference.cache
 C:\Users\T-Gamer\source\repos\C-Sharp\WebApplication\WebApplication\obj\Debug\WebApplication.csproj.CoreCompileInputs.cache
 C:\Users\T-Gamer\source\repos\C-Sharp\WebApplication\WebApplication\obj\Debug\WebApplication.csproj.CopyComplete
 C:\Users\T-Gamer\source\repos\C-Sharp\WebApplication\WebApplication\obj\Debug\WebApplication.dll

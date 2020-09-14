@@ -14,6 +14,26 @@
         <asp:TextBox ID="txtMensagem" runat="server"></asp:TextBox>
         <input type="text" name="telefone" id="telefone" runat="server" />
         <asp:Button ID="btnOk" runat="server" OnClick="btnOk_Click" Text="Mostrar mensagem" />
+        <br />
+        <br />
+        <asp:DropDownList ID="ddlContatos" runat="server" >
+        </asp:DropDownList>
+        <br />
+        <br />
+        <br />
+        <select id="selectManual">
+            <% foreach (var contato in contatos) { %>
+                <option value="<%= contato.Id %>"><%= contato.Nome %></option>
+                
+                <%} %>
+        </select><br />
+        <asp:GridView ID="GridView1" runat="server">
+        </asp:GridView>
+        <br />
+        <br />
+&nbsp;<div id="selectManualRunatServer" runat="server">
+
+        </div>
     </form>
 </body>
 </html>
