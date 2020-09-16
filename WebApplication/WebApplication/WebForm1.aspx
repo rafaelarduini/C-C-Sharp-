@@ -1,5 +1,8 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs" Inherits="WebApplication.WebForm1" %>
 
+<%@ Register Src="~/Login.ascx" TagPrefix="uc1" TagName="Login" %>
+
+
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -10,6 +13,7 @@
 <body>
     <form id="form1" runat="server">
         <div>
+            <uc1:Login runat="server" ID="ctrLogin" />
         </div>
         <asp:TextBox ID="txtMensagem" runat="server"></asp:TextBox>
         <input type="text" name="telefone" id="telefone" runat="server" />

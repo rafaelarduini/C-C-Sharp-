@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using WebApplication.App_Code;
+using WebApplication;
 
 namespace WebApplication
 {
@@ -13,6 +13,8 @@ namespace WebApplication
         public List<Contato> contatos = new List<Contato>();
         protected void Page_Load(object sender, EventArgs e)
         {
+            ctrLogin.Mensagem = "default pagina";
+
             contatos.Add(new Contato() { Nome = "Rafael", Id = 1 });
             contatos.Add(new Contato() { Nome = "Aline", Id = 2 });
             contatos.Add(new Contato() { Nome = "Marie", Id = 3 });

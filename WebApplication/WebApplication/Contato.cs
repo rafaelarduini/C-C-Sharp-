@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace WebApplication.App_Code
+namespace WebApplication
 {
     public class Contato
     {

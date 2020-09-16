@@ -56,3 +56,4 @@ C:\Users\T-Gamer\source\repos\C-Sharp\WebApplication\WebApplication\obj\Debug\We
 C:\Users\T-Gamer\source\repos\C-Sharp\WebApplication\WebApplication\obj\Debug\WebApplication.csproj.CopyComplete
 C:\Users\T-Gamer\source\repos\C-Sharp\WebApplication\WebApplication\obj\Debug\WebApplication.dll
 C:\Users\T-Gamer\source\repos\C-Sharp\WebApplication\WebApplication\obj\Debug\WebApplication.pdb
+C:\Users\T-Gamer\source\repos\C-Sharp\WebApplication\WebApplication\obj\Debug\WebApplication.csprojAssemblyReference.cache
