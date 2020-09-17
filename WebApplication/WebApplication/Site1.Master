@@ -1,0 +1,26 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="WebApplication.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <asp:ContentPlaceHolder ID="header" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <ul>
+        <li><a href="../WebForm2.aspx">Pagina 1</a></li>
+        <li><a href="../WebForm3.aspx">Pagina 2</a></li>
+        <li><a href="../WebForm4.aspx">Pagina 3</a></li>
+    </ul>    <form id="form1" runat="server">
+    <div>
+        <asp:ContentPlaceHolder ID="content" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+    <asp:ContentPlaceHolder ID="footer" runat="server">
+    </asp:ContentPlaceHolder>
+</body>
+</html>
